@@ -44,7 +44,7 @@ st.image('pro.png')
 
 #Adding 3-6 Visualizations using photos collected and made from your graph
 #adding images
-st.write('We our going to begin our data, with a visulization with the start of a correlation matrix, to get an idea of relationships between different features of our data.')
+st.write('We our going to begin our data, with a visulization of a correlation matrix, to get an idea of relationships between different features of our data.')
 # correlation matrix
 corr_matrix = student_alc_df.corr()
 # making the heatmap
