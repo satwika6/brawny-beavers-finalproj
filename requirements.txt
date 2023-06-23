@@ -1,7 +1,7 @@
 pandas
 wget
 streamlit
-numpy
+numpy==1.21.0
 seaborn
 matplotlib
 plotly
