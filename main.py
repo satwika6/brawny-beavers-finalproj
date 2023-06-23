@@ -53,10 +53,16 @@ new_student_alc_df.""")
 st.markdown("""---""")
 st.write('We our going to begin our data, with a visulization of a correlation matrix, to get an idea of relationships between different features of our data.')
 # correlation matrix
-corr_matrix = student_alc_df.corr()
+# Select numerical columns
+numerical_columns = student_alc_df.select_dtypes(include=['int64', 'float64']).columns
+# Create new DataFrame with numerical columns only
+numerical_df = student_alc_df[numerical_columns]
+# Calculate correlation matrix
+corr_matrix = numerical_df.corr()
 # making the heatmap
-plt.figure()
-fig = sns.heatmap(corr_matrix, annot = True, fmt = ".2f")
+plt.figure(figsize=(10, 10))
+sns.heatmap(corr_matrix, annot = True, fmt = ".2f")
+
 # titled our plot using matplotlib
 plt.title("Student alcohol consumption corrrelation matrix")
 st.pyplot(plt.gcf())
